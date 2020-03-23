@@ -31,14 +31,4 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('test app is running!');
   });
-
-  it('should emit true for numbers', () => {
-    const testInput = from([null, '', 0, 'abc', 3, 'def', 1.5, 'xyz', 200]);
-    const testStream = new NumberStream(testInput);
-
-    testStream.isNumber().pipe(toArray()).subscribe(output => {
-      console.log(output);
-      expect(output).toEqual([false, false, true, false, true, false, true, false, true])
-    })
-  });
 });
